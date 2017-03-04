@@ -17,13 +17,6 @@ html {
 	padding: 3%;
 }
 
-.content-modal {
-	background-color: #fff;
-	margin:5%;
-	height: 50%;
-	padding: 5%;
-}
-
 table {
 	border-collapse: collapse;
 	margin: 50px 0;
@@ -48,6 +41,19 @@ td {
 	vertical-align: middle;
 }
 
+.adicionar {
+	float: right;
+	margin-bottom: 10px;
+	transition: 300ms all;
+	z-index: 200;
+}
+
+.adicionar:hover {
+	filter: contrast(1.4);
+	cursor: pointer;
+	z-index: 200;
+}
+
 tbody {
 	border: 10px solid #04724D;
 }
@@ -70,4 +76,69 @@ tbody tr:hover {
 	height: 100%;
 	position: absolute;
 	background: rgba(0,0,0,0.5);
+	overflow-y: hidden;
+	z-index: 9999;
+}
+
+.content-modal {
+	background-color: #fff;
+	margin:5%;
+	height: 500px;
+	padding: 5%;
+	position: relative;
+}
+
+.content-modal .close {
+	position: absolute;
+	right: -10px;
+	top: -10px;
+}
+.content-modal .close:hover {
+	cursor: pointer;
+}
+.modal input {
+	width: 100%;
+	border-radius: 5px;
+	height: 10px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	margin-bottom: 1%;
+}
+
+.modal button {
+	-webkit-appearance: button
+	display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.modal h2 {
+	margin-bottom: 50px;
+}
+.modal button:hover {
+	color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+.hide {
+	display: none;
 }

@@ -31,3 +31,11 @@ $('tr').hover(function() {
     position = 0;
     $('tr').removeClass('hover');
 });
+
+$(".close").click(function() {
+  $(".modal").addClass("hide");
+});
+
+$(".adicionar").click(function() {
+  $(".modal").removeClass("hide");
+})
