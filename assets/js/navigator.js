@@ -1,13 +1,12 @@
 var position = 0;
 var lengthTr = $("tbody tr").length / 2
 
-function mover(position) {
+function move(position) {
     $('tr').removeClass('hover');
     $('*[data-position="'+position+'"]').addClass('hover');
 }
 
 $(document).keydown(function(e){
-    console.log(e.keyCode);
     switch(e.keyCode){
       case 27:
           position = 0;
@@ -16,13 +15,13 @@ $(document).keydown(function(e){
       case 38:
           if(position > 1){
             position--;
-            mover(position);
+            move(position);
           }
         break;
       case 40:
           if(position < lengthTr) {
             position++;
-            mover(position);
+            move(position);
           }
         break;
     }
