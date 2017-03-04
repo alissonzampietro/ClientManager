@@ -1,0 +1,22 @@
+{
+  "name": "drconsulta",
+  "version": "1.0.0",
+  "description": "O teste consiste em criar um cadastro simples de contatos / clientes, com edição e busca \"offline\", com navegação em apenas uma tela (entenda como navegação com javascript: display: none, innerHTML='', ajax, etc).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alissonzampietro/ClienteManager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alissonzampietro/ClienteManager/issues"
+  },
+  "homepage": "https://github.com/alissonzampietro/ClienteManager#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
