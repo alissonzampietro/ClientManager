@@ -1,0 +1,38 @@
+* {
+	margin:0;
+	padding:0;
+	list-style:none;
+	vertical-align:baseline;
+}
+
+html {
+	width: 100%;
+	background-color: #04724D;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body {
+	width: 80%;
+	margin: auto;
+	color: #fff;
+	padding: 3%;
+}
+
+table {
+	margin: 50px 0;
+	background-color: #F4F4F9;
+	color: #000;
+	width: 100%;
+	table-layout: fixed;
+}
+table th {
+	width: 50px;
+}
+
+td {
+	text-align: center;
+}
+
+.icons {
+	
+}

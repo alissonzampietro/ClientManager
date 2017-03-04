@@ -1,8 +1,12 @@
-function cadastrarCliente() {
+var ClienteController = {
+  clientes: [],
+  cadastrarClientes: function () {
 
-}
+  },
+  validaCliente: function () {
 
-function carregarClientes()
-{
-	console.log(localStorage);
+  },
+  carregarClientes: function () {
+    console.log(localStorage);
+  }
 }
