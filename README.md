@@ -1,4 +1,4 @@
-# Teste Programador FullStack ***"Redshirt"*** - Cadastro de contatos
+# Cadastro de contatos
 
 ## Parte I
 O teste consiste em criar um cadastro simples de contatos / clientes, com edição e busca "offline", com navegação em apenas uma tela (entenda como navegação com javascript: display: none, innerHTML='', ajax, etc).
