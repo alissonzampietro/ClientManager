@@ -9,7 +9,7 @@
 	<h1>Bem vindo ao Clientela</h1>
 
 	<table>
-		<tr>
+		<thead>
 			<th>Nome</th>
 			<th>Email</th>
 			<th>CPF</th>
@@ -17,24 +17,61 @@
 			<th>Aniversário</th>
 			<th>Criado Em</th>
 			<th>Modificado Em</th>
-			<th class="icons"></th>
-			<th class="icons"></th>
-		</tr>
-		<tr id="data">
-			<td>Alisson Zampietro</td>
-			<td>alisson.zampietro@gmail.com</td>
-			<td>35777268811</td>
-			<td>987487602</td>
-			<td>29/09/1994</td>
-			<td>03/03/2017</td>
-			<td>NULL</td>
-			<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
-			<td class="icons">Excluir</td>
-		</tr>
+			<th class="icons">Editar</th>
+			<th class="icons">Excluir</th>
+		</thead>
+		<tfoot>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>CPF</th>
+			<th>Telefone</th>
+			<th>Aniversário</th>
+			<th>Criado Em</th>
+			<th>Modificado Em</th>
+			<th class="icons">Editar</th>
+			<th class="icons">Excluir</th>
+		</tfoot>
+		<tbody id="data">
+			<tr data-position="1">
+				<td>Alisson Zampietro</td>
+				<td>alisson.zampietro@gmail.com</td>
+				<td>35777268811</td>
+				<td>987487602</td>
+				<td>29/09/1994</td>
+				<td>03/03/2017</td>
+				<td>NULL</td>
+				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+			<tr/>
+			<tr data-position="2">
+				<td>Alisson Zampietro</td>
+				<td>alisson.zampietro@gmail.com</td>
+				<td>35777268811</td>
+				<td>987487602</td>
+				<td>29/09/1994</td>
+				<td>03/03/2017</td>
+				<td>NULL</td>
+				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+			<tr/>
+			<tr data-position="3">
+				<td>Alisson Zampietro</td>
+				<td>alisson.zampietro@gmail.com</td>
+				<td>35777268811</td>
+				<td>987487602</td>
+				<td>29/09/1994</td>
+				<td>03/03/2017</td>
+				<td>NULL</td>
+				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+			<tr/>
+		</tbody>
+
 	</table>
 
 </body>
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/navigator.js"></script>
 	<script type="text/javascript" src="src/Controllers/Cliente.js"></script>
 	<script type="text/javascript" src="src/Persists/Cliente.js"></script>
 	<script type="text/javascript">
