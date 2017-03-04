@@ -11,11 +11,17 @@ html {
 	font-family: 'PT Sans', sans-serif;
 }
 
-body {
-	width: 80%;
+.content {
 	margin: auto;
 	color: #fff;
 	padding: 3%;
+}
+
+.content-modal {
+	background-color: #fff;
+	margin:5%;
+	height: 50%;
+	padding: 5%;
 }
 
 table {
@@ -57,4 +63,11 @@ tbody tr:hover {
 	background-color: #04724D;
 	color: #fff;
 	cursor: pointer;
+}
+
+.modal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0,0,0,0.5);
 }

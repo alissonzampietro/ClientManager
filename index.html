@@ -6,47 +6,62 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<h1>Bem vindo ao Clientela</h1>
+	<div class="modal">
+		<div class="content-modal">
+			<form class="" action="index.html" method="post">
+					<label for="">Nome</label>
+					<input type="text" name="nome">
+					<label for="">Sobrenome</label>
+					<input type="text" name="sobrenome">
+					<label for="">CPF</label>
+					<input type="text" name="nome">
+					<label for="">Telefone</label>
+					<input type="text" name="nome">
+			</form>
+		</div>
+	</div>
+	<div class="content">
+		<h1>Bem vindo ao Clientela</h1>
 
-	<table>
-		<thead>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>CPF</th>
-			<th>Telefone</th>
-			<th>Aniversário</th>
-			<th>Criado Em</th>
-			<th>Modificado Em</th>
-			<th class="icons">Editar</th>
-			<th class="icons">Excluir</th>
-		</thead>
-		<tfoot>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>CPF</th>
-			<th>Telefone</th>
-			<th>Aniversário</th>
-			<th>Criado Em</th>
-			<th>Modificado Em</th>
-			<th class="icons">Editar</th>
-			<th class="icons">Excluir</th>
-		</tfoot>
-		<tbody id="data">
-			<tr data-position="1">
-				<td data="nome">Alisson Zampietro</td>
-				<td data="email">alisson.zampietro@gmail.com</td>
-				<td data="cpf">35777268811</td>
-				<td data="telefone">987487602</td>
-				<td data="nascimento">29/09/1994</td>
-				<td data="cadastro">03/03/2017</td>
-				<td data="editado">NULL</td>
-				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
-				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
-			<tr/>
-		</tbody>
+		<table>
+			<thead>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>CPF</th>
+				<th>Telefone</th>
+				<th>Aniversário</th>
+				<th>Criado Em</th>
+				<th>Modificado Em</th>
+				<th class="icons">Editar</th>
+				<th class="icons">Excluir</th>
+			</thead>
+			<tfoot>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>CPF</th>
+				<th>Telefone</th>
+				<th>Aniversário</th>
+				<th>Criado Em</th>
+				<th>Modificado Em</th>
+				<th class="icons">Editar</th>
+				<th class="icons">Excluir</th>
+			</tfoot>
+			<tbody id="data">
+				<tr data-position="1">
+					<td data="nome">Alisson Zampietro</td>
+					<td data="email">alisson.zampietro@gmail.com</td>
+					<td data="cpf">35777268811</td>
+					<td data="telefone">987487602</td>
+					<td data="nascimento">29/09/1994</td>
+					<td data="cadastro">03/03/2017</td>
+					<td data="editado">NULL</td>
+					<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+					<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+				<tr/>
+			</tbody>
 
-	</table>
-
+		</table>
+	</div>
 </body>
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/navigator.js"></script>
