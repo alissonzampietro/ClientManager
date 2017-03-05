@@ -18,3 +18,17 @@ PersistClient.prototype.save = function (obj) {
 PersistClient.prototype.get = function () {
   return JSON.parse(localStorage.getItem('clients'));
 };
+
+PersistClient.prototype.getByName = function (name) {
+  var tempClients = [];
+  var allClients = PersistClient.prototype.get();
+  tempClients = Object.keys(allClients).map(
+    function (key) {
+      var nome = allClients[key].nome;
+      if(nome.indexOf(name) > -1){
+        return allClients[key];
+      }
+    }
+  );
+  return tempClients;
+};

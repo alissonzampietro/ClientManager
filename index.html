@@ -36,6 +36,7 @@
 		<input type="text" id="busca" class="input" placeholder="Digite o nome do cliente" />
 		<table>
 			<thead class="cabecalho">
+				<th>ID</th>
 				<th>Nome</th>
 				<th>Email</th>
 				<th>CPF</th>
@@ -49,7 +50,8 @@
 			<tbody id="data">
 
 			</tbody>
-			<tr class="hide example" data-position="">
+			<tr class="hide example all" data-position="">
+				<td data="id"></td>
 				<td data="nome"></td>
 				<td data="email"></td>
 				<td data="cpf"></td>
@@ -69,7 +71,6 @@
 	<script type="text/javascript" src="src/Persists/Client.js"></script>
 	<script type="text/javascript" src="src/Controllers/Client.js"></script>
 	<script type="text/javascript">
-	// localStorage.removeItem('clients');
 	var controller = new ControllerClient();
 	controller.loadClients();
 	</script>

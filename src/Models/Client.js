@@ -1,4 +1,5 @@
 var Client = function(){
+  this.id;
   this.nome;
   this.email;
   this.cpf;
@@ -14,6 +15,7 @@ Client.prototype.setClient = (nome, email, cpf, nascimento, telefone) => {
      && email != "" && email != undefined && email != null
      && cpf != "" && cpf != undefined && cpf != null
      && nascimento != "" && nascimento != undefined && nascimento != null) {
+    this.id = parseInt(Client.prototype.defineId());
     this.nome = nome;
     this.email = email;
     this.cpf = cpf;
@@ -24,15 +26,27 @@ Client.prototype.setClient = (nome, email, cpf, nascimento, telefone) => {
     this.nascimento.ano = data[0];
     this.criadoEm = new Date();
     this.atualizadoEm = null;
-    console.log(this.nome, this.email, this.cpf, this.telefone, this.nascimento, this.criadoEm, this.atualizadoEm);
     return Client.prototype.getData();
   }else{
     return false;
   }
 }
 
+Client.prototype.defineId = () => {
+  var persistence = new PersistClient();
+  var allClients = persistence.get();
+  if(allClients !== null) {
+    var allIds = Object.keys(allClients).map(function (key) { return allClients[key].id; });
+    var maxId = Math.max.apply( null, allIds );
+    return parseInt(maxId) + 1;
+  }else {
+    return 1;
+  }
+}
+
 Client.prototype.getData = () => {
     var obj = {
+      id: this.id,
       nome: this.nome,
       email: this.email,
       cpf: this.cpf,
@@ -41,7 +55,5 @@ Client.prototype.getData = () => {
       criadoEm: this.criadoEm,
       atualizadoEm: this.atualizadoEm
     };
-
-    console.log(obj);
     return obj;
 };
