@@ -7,7 +7,7 @@
 
 html {
 	width: 100%;
-	background-color: #04724D;
+	background-color: #1b65a7;
 	font-family: 'PT Sans', sans-serif;
 }
 
@@ -55,18 +55,18 @@ td {
 }
 
 tbody {
-	border-top: 2px solid #04724D;
+	border-top: 2px solid #1b65a7;
 }
 tbody tr {
 	transition: 200ms all;
 }
 .hover {
-	background-color: #04724D;
+	background-color: #1b65a7;
 	color: #fff;
 	cursor: pointer;
 }
 tbody tr:hover {
-	background-color: #04724D;
+	background-color: #1b65a7;
 	color: #fff;
 	cursor: pointer;
 }

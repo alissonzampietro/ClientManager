@@ -1,9 +1,9 @@
 $(".close").click(function() {
-  $(".modal").addClass("hide");
+  $(".modal").fadeToggle("hide");
 });
 
 $(".adicionar").click(function() {
-  $(".modal").removeClass("hide");
+  $(".modal").fadeToggle("hide");
 });
 
 $("#inserir").click(function() {
