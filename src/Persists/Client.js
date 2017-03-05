@@ -19,6 +19,16 @@ PersistClient.prototype.get = function () {
   return JSON.parse(localStorage.getItem('clients'));
 };
 
+PersistClient.prototype.getByID = function (id) {
+  var tempClients;
+  var allClients = PersistClient.prototype.get();
+  for(client in allClients) {
+    if(id == allClients[client].id){
+      return allClients[client];
+    }
+  }
+};
+
 PersistClient.prototype.getByName = function (name) {
   var tempClients = [];
   var allClients = PersistClient.prototype.get();

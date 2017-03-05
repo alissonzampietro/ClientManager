@@ -20,8 +20,17 @@ ControllerClient.prototype.insertClients = () => {
     window.MESSAGE("erro-cadastro");
   }
 };
-ControllerClient.prototype.validateClient = () => {
 
+ControllerClient.prototype.screenEdit = (id) => {
+    var client = persistence.getByID(id);
+    console.log(client);
+     $("#id").val(client.id);
+     $("#atualiza-nome").val(client.nome);
+     $("#atualiza-email").val(client.email);
+     $("#atualiza-cpf").val(client.cpf);
+     var nascimento = client.nascimento;
+     $("#atualiza-nascimento").val(nascimento.ano+"-"+nascimento.mes+"-"+nascimento.dia);
+     $("#atualiza-telefone").val(client.telefone);
 };
 ControllerClient.prototype.loadClients = (name = null) => {
   if(name == null) {

@@ -6,6 +6,16 @@ function clearFormFields() {
   $("#telefone").val("")
 }
 
+function showInsertForm() {
+  $("#editar").addClass("hide");
+  $("#cadastrar").removeClass("hide");
+}
+
+function showEditForm() {
+  $("#cadastrar").addClass("hide");
+  $("#editar").removeClass("hide");
+}
+
 window.MESSAGE = function(chave) {
   var mensagens = {
     "erro-cadastro": {

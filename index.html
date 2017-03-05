@@ -11,9 +11,9 @@
 			<div class="close">
 				<img src="assets/images/close.png" width="30" alt="Fechar">
 			</div>
-			<h2>Cadastro de Clientes</h2>
+			<h2></h2>
 			<p class="log-message hide"></p>
-			<form class="" action="#" method="post">
+			<form id="cadastrar" class="" action="#" method="post">
 					<label for="">Nome</label>
 					<input type="text" id="nome">
 					<label for="">Email</label>
@@ -25,6 +25,21 @@
 					<label for="">Data Nascimento</label>
 					<input type="date" id="nascimento">
 					<button type="button" name="button" id="inserir">Inserir</button>
+			</form>
+			<form id="editar" class="hide" action="#" method="post">
+					<label for="">ID</label>
+					<input type="text" id="id" disabled>
+					<label for="">Nome</label>
+					<input type="text" id="atualiza-nome">
+					<label for="">Email</label>
+					<input type="text" id="atualiza-email">
+					<label for="">CPF</label>
+					<input type="text" id="atualiza-cpf">
+					<label for="">Telefone</label>
+					<input type="text" id="atualiza-telefone">
+					<label for="">Data Nascimento</label>
+					<input type="date" id="atualiza-nascimento">
+					<button type="button" name="button" id="atualizar">Atualizar</button>
 			</form>
 		</div>
 	</div>
@@ -59,8 +74,8 @@
 				<td data="nascimento"></td>
 				<td data="cadastro"></td>
 				<td data="editado"></td>
-				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
-				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+				<td class="icons editar"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+				<td class="icons excluir"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
 			<tr/>
 		</table>
 	</div>

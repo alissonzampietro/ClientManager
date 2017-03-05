@@ -6,6 +6,8 @@ $(".close").click(function() {
 });
 
 $(".adicionar").click(function() {
+  $(".content-modal h2").text("Cadastro de Clientes");
+  showInsertForm();
   $(".modal").fadeToggle("hide");
 });
 
@@ -16,4 +18,13 @@ $("#busca").keyup(function() {
 
 $("#inserir").click(function() {
   controller.insertClients();
+});
+
+$(".editar").click(function() {
+  var pai = $(this).parent();
+  var id = pai.children(":first").html();
+  $(".content-modal h2").text("Edição de Clientes");
+  showEditForm();
+  controller.screenEdit(id);
+  $(".modal").fadeToggle("hide");
 })
