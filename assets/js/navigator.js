@@ -8,6 +8,10 @@ function move(position) {
 
 $(document).keydown(function(e){
     switch(e.keyCode){
+      case 13:
+          if($(".hover").length == 1){
+            $(".hover > .editar").trigger("click");
+          }
       case 27:
           position = 0;
           $('tr').removeClass('hover');

@@ -23,7 +23,6 @@ ControllerClient.prototype.insertClients = () => {
 
 ControllerClient.prototype.screenEdit = (id) => {
     var client = persistence.getByID(id);
-    console.log(client);
      $("#id").val(client.id);
      $("#atualiza-nome").val(client.nome);
      $("#atualiza-email").val(client.email);
