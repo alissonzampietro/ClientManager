@@ -12,18 +12,18 @@
 				<img src="assets/images/close.png" width="30" alt="Fechar">
 			</div>
 			<h2>Cadastro de Clientes</h2>
-			<form class="" action="index.html" method="post">
+			<form class="" action="#" method="post">
 					<label for="">Nome</label>
-					<input type="text" name="nome">
+					<input type="text" id="nome">
 					<label for="">Email</label>
-					<input type="text" name="email">
+					<input type="text" id="email">
 					<label for="">CPF</label>
-					<input type="text" name="cpf">
+					<input type="text" id="cpf">
 					<label for="">Telefone</label>
-					<input type="text" name="telefone">
+					<input type="text" id="telefone">
 					<label for="">Data Nascimento</label>
-					<input type="date" name="nascimento">
-					<button type="button" name="button">Inserir</button>
+					<input type="date" id="nascimento">
+					<button type="button" name="button" id="inserir">Inserir</button>
 			</form>
 		</div>
 	</div>
@@ -32,8 +32,9 @@
 		<div class="adicionar">
 			<img src="assets/images/add.png" width="50" alt="">
 		</div>
+		<input type="text" id="busca" class="input" placeholder="Digite o nome do cliente" />
 		<table>
-			<thead>
+			<thead class="cabecalho">
 				<th>Nome</th>
 				<th>Email</th>
 				<th>CPF</th>
@@ -44,28 +45,17 @@
 				<th class="icons">Editar</th>
 				<th class="icons">Excluir</th>
 			</thead>
-			<tfoot>
-				<th>Nome</th>
-				<th>Email</th>
-				<th>CPF</th>
-				<th>Telefone</th>
-				<th>Aniversário</th>
-				<th>Criado Em</th>
-				<th>Modificado Em</th>
-				<th class="icons">Editar</th>
-				<th class="icons">Excluir</th>
-			</tfoot>
-			<tbody id="data">
+			<tbody class="hide table-example" id="data">
 				<tr data-position="1">
-					<td data="nome">Alisson Zampietro</td>
-					<td data="email">alisson.zampietro@gmail.com</td>
-					<td data="cpf">35777268811</td>
-					<td data="telefone">987487602</td>
-					<td data="nascimento">29/09/1994</td>
-					<td data="cadastro">03/03/2017</td>
-					<td data="editado">NULL</td>
-					<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
-					<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
+				<td data="nome"></td>
+				<td data="email"></td>
+				<td data="cpf"></td>
+				<td data="telefone"></td>
+				<td data="nascimento"></td>
+				<td data="cadastro"></td>
+				<td data="editado"></td>
+				<td class="icons"><img src="assets/images/edit.png" width="20" alt="Editar"></td>
+				<td class="icons"><img src="assets/images/delete.png" width="20" alt="Excluir"></td>
 				<tr/>
 			</tbody>
 
@@ -73,12 +63,13 @@
 	</div>
 </body>
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/navigator.js"></script>
-	<script type="text/javascript" src="src/Controllers/Client.js"></script>
+	<script type="text/javascript" src="src/Models/Client.js"></script>
 	<script type="text/javascript" src="src/Persists/Client.js"></script>
+	<script type="text/javascript" src="src/Controllers/Client.js"></script>
+	<script type="text/javascript" src="assets/js/navigator.js"></script>
+	<script type="text/javascript" src="assets/js/triggers.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			ControllerClient.loadClients();
-		})
+		var controller = new ControllerClient();
+		controller.loadClients();
 	</script>
 </html>

@@ -13,7 +13,7 @@ $(document).keydown(function(e){
           $('tr').removeClass('hover');
         break;
       case 38:
-          if(position > 1){
+          if(position > 0){
             position--;
             move(position);
           }
@@ -31,11 +31,3 @@ $('tr').hover(function() {
     position = 0;
     $('tr').removeClass('hover');
 });
-
-$(".close").click(function() {
-  $(".modal").addClass("hide");
-});
-
-$(".adicionar").click(function() {
-  $(".modal").removeClass("hide");
-})
