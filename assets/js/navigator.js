@@ -1,5 +1,5 @@
 var position = 0;
-var lengthTr = $("tbody tr").length / 2
+var lengthTr = $("tbody tr").length / 2;
 
 function move(position) {
     $('tr').removeClass('hover');

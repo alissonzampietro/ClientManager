@@ -12,8 +12,13 @@ ControllerClient.prototype.insertClients = () => {
 
   var modelClient = new Client();
   var objClient = modelClient.setClient(nome, email, cpf, nascimento, telefone);
-  console.log(objClient);
-  persistence.save(objClient);
+  if(objClient != false) {
+    window.MESSAGE("cadastrado");
+    clearFormFields();
+    persistence.save(objClient);
+  }else{
+    window.MESSAGE("erro-cadastro");
+  }
 };
 ControllerClient.prototype.validateClient = () => {
 
@@ -21,14 +26,14 @@ ControllerClient.prototype.validateClient = () => {
 ControllerClient.prototype.loadClients = function() {
   var clientes = persistence.get();
   for(cliente in clientes){
-    var element = $( ".table-example" ).clone().appendTo( "table" );
-    console.log(clientes[cliente]);
-    element.removeClass('hide table-example');
+    var element = $( ".example" ).clone().appendTo( "#data" );
+    element.attr("data-position",cliente);
+    element.removeClass('hide example');
     $("td[data='nome']",element).html(clientes[cliente].nome);
     $("td[data='email']",element).html(clientes[cliente].email);
     $("td[data='cpf']",element).html(clientes[cliente].cpf);
     $("td[data='telefone']",element).html(clientes[cliente].telefone);
-    $("td[data='nascimento']",element).html(clientes[cliente].nascimento);
+    $("td[data='nascimento']",element).html(clientes[cliente].nascimento.dia+"/"+clientes[cliente].nascimento.mes+"/"+clientes[cliente].nascimento.ano);
     var criadoEm = new Date(clientes[cliente].criadoEm);
     $("td[data='cadastro']",element).html(criadoEm.getDate() + "-" + (criadoEm.getMonth()+1) + "-" + criadoEm.getFullYear());
     if(clientes[cliente].atualizadoEm == null){

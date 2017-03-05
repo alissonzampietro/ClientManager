@@ -153,3 +153,15 @@ tbody tr:hover {
 .hide {
 	display: none;
 }
+
+.log-message {
+	font-size: 1em;
+	font-weight: bold;
+}
+.erro {
+	color: #f00;
+}
+
+.acerto {
+	color: #4cae4c;
+}

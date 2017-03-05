@@ -18,7 +18,10 @@ Client.prototype.setClient = (nome, email, cpf, nascimento, telefone) => {
     this.email = email;
     this.cpf = cpf;
     this.telefone = telefone;
-    this.nascimento = nascimento;
+    var data = nascimento.split("-");
+    this.nascimento.dia = data[2];
+    this.nascimento.mes = data[1];
+    this.nascimento.ano = data[0];
     this.criadoEm = new Date();
     this.atualizadoEm = null;
     console.log(this.nome, this.email, this.cpf, this.telefone, this.nascimento, this.criadoEm, this.atualizadoEm);
