@@ -29,13 +29,19 @@ window.MESSAGE = function(chave) {
     "editado": {
       msg: "Cliente editado com sucesso.",
       classe: "acerto"
+    },
+    "deletado": {
+      msg: "Cliente excluído com sucesso.",
+      classe: "acerto"
     }
   }
+  $(".log-message").removeClass("erro");
+  $(".log-message").removeClass("acerto");
   $(".log-message").text(mensagens[chave].msg);
   $(".log-message").addClass(mensagens[chave].classe);
-  $(".log-message").removeClass("hide");
+  $(".log-message").removeClass("error-hide");
   window.setTimeout(function(){
-    $("#log-message").addClass("hide");
+    $("#log-message").addClass("error-hide");
     $(".log-message").text("");
     $("#log-message").removeClass(mensagens[chave].classe);
   }, 5000);

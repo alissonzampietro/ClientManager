@@ -21,6 +21,15 @@ ControllerClient.prototype.insertClients = () => {
   }
 };
 
+ControllerClient.prototype.deleteClient = (id) => {
+  if(id) {
+    persistence.delete(id);
+    window.MESSAGE("deletado")
+  }else{
+    window.MESSAGE("erro-delete")
+  }
+};
+
 ControllerClient.prototype.updateClients = () => {
   var id = $("#id").val();
   var nome = $("#atualiza-nome").val();
@@ -49,16 +58,25 @@ ControllerClient.prototype.screenEdit = (id) => {
      $("#atualiza-nascimento").val(nascimento.ano+"-"+nascimento.mes+"-"+nascimento.dia);
      $("#atualiza-telefone").val(client.telefone);
 };
+
 ControllerClient.prototype.loadClients = (name = null) => {
+  var lengthClients;
+  $("#data>tr").remove();
   if(name == null) {
     var clientes = persistence.get();
   }else{
-    $("#data>.all").remove();
     var clientes = persistence.getByName(name);
   }
+  if(clientes != null) {
+    lengthClients = clientes.length;
+  }else {
+    lengthClients = 0;
+  }
+  window.QUANTIDADE_CLIENTES = lengthClients;
   for(cliente in clientes){
     if(clientes[cliente] !== undefined) {
-      var element = $( ".example" ).clone().appendTo( "#data" );
+      var atualizadoEm = "";
+      var element = $( ".example" ).clone(true, true).appendTo( "#data" );
       element.attr("data-position",cliente);
       element.removeClass('hide example');
       $("td[data='id']",element).html(clientes[cliente].id);
@@ -68,12 +86,10 @@ ControllerClient.prototype.loadClients = (name = null) => {
       $("td[data='telefone']",element).html(clientes[cliente].telefone);
       $("td[data='nascimento']",element).html(clientes[cliente].nascimento.dia+"/"+clientes[cliente].nascimento.mes+"/"+clientes[cliente].nascimento.ano);
       var criadoEm = new Date(clientes[cliente].criadoEm);
-      $("td[data='cadastro']",element).html(criadoEm.getDate() + "-" + (criadoEm.getMonth()+1) + "-" + criadoEm.getFullYear());
-      if(clientes[cliente].atualizadoEm == null){
-        var atualizado = "";
-      }else{
-        var atualizadoEm = new Date();
-        atualizadoEm = atualizadoEm.getDate() + "-" + (atualizadoEm.getMonth()+1) + "-" + atualizadoEm.getFullYear();
+      $("td[data='cadastro']",element).html(("0" + criadoEm.getDate()).slice(-2) + "/" + ("0" + (criadoEm.getMonth()+1)).slice(-2) + "/" + criadoEm.getFullYear() + " " + ("0" + criadoEm.getHours()).slice(-2) + ":" + ("0" + criadoEm.getMinutes()).slice(-2));
+      if(clientes[cliente].atualizadoEm != null){
+        var atualizadoEm = new Date(clientes[cliente].atualizadoEm);
+        atualizadoEm = ("0" + atualizadoEm.getDate()).slice(-2) + "/" + ("0" + (atualizadoEm.getMonth()+1)).slice(-2) + "/" + atualizadoEm.getFullYear() + " " + ("0" + atualizadoEm.getHours()).slice(-2) + ":" + ("0" + atualizadoEm.getMinutes()).slice(-2);
       }
       $("td[data='editado']",element).html(atualizadoEm);
     }

@@ -15,6 +15,19 @@ PersistClient.prototype.save = function (obj) {
   localStorage.setItem('clients', clientes);
 };
 
+PersistClient.prototype.delete = function (id) {
+  var clients = this.get();
+  for(client in clients) {
+    if(clients[client].id == id) {
+      clients.splice(client, 1);
+      break;
+    }
+  }
+  var clientes = JSON.stringify(clients);
+  localStorage.removeItem('clients');
+  localStorage.setItem('clients', clientes);
+};
+
 PersistClient.prototype.update = function (obj) {
   var clients = this.get();
   for(client in clients) {
@@ -55,7 +68,7 @@ PersistClient.prototype.getByName = function (name) {
   tempClients = Object.keys(allClients).map(
     function (key) {
       var nome = allClients[key].nome;
-      if(nome.indexOf(name) > -1){
+      if(nome.toLowerCase().indexOf(name.toLowerCase()) > -1){
         return allClients[key];
       }
     }

@@ -83,7 +83,7 @@ tbody tr:hover {
 .content-modal {
 	background-color: #fff;
 	margin:5%;
-	height: 500px;
+	height: 550px;
 	padding: 5%;
 	position: relative;
 }
@@ -149,14 +149,25 @@ tbody tr:hover {
   background-color: #449d44;
   border-color: #398439;
 }
-
 .hide {
 	display: none;
 }
-
+.error-hide {
+	top: -400px;
+}
 .log-message {
 	font-size: 1em;
 	font-weight: bold;
+	position:absolute;
+	left:0;
+	right:0;
+	transition: 300ms all;
+	text-align: center;
+	font-size: 1.7em;
+	margin-left:auto;
+	margin-right:auto;
+	background: #fff;
+	z-index: 99999;
 }
 .erro {
 	color: #f00;

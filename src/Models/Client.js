@@ -41,6 +41,9 @@ Client.prototype.defineId = () => {
   var persistence = new PersistClient();
   var allClients = persistence.get();
   if(allClients !== null) {
+    if(allClients.length == 0) {
+      return 1;
+    }
     var allIds = Object.keys(allClients).map(function (key) { return allClients[key].id; });
     var maxId = Math.max.apply( null, allIds );
     return parseInt(maxId) + 1;

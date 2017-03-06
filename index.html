@@ -6,13 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+	<p class="log-message error-hide">Não cadastrado</p>
 	<div class="modal hide">
 		<div class="content-modal">
 			<div class="close">
 				<img src="assets/images/close.png" width="30" alt="Fechar">
 			</div>
 			<h2></h2>
-			<p class="log-message hide"></p>
 			<form id="cadastrar" class="" action="#" method="post">
 					<label for="">Nome</label>
 					<input type="text" id="nome">
@@ -48,7 +48,7 @@
 		<div class="adicionar">
 			<img src="assets/images/add.png" width="50" alt="">
 		</div>
-		<input type="text" id="busca" class="input" placeholder="Digite o nome do cliente" />
+		<input type="text" id="busca" class="input" placeholder="Pesquise o nome do cliente" />
 		<table>
 			<thead class="cabecalho">
 				<th>ID</th>
@@ -63,7 +63,6 @@
 				<th class="icons">Excluir</th>
 			</thead>
 			<tbody id="data">
-
 			</tbody>
 			<tr class="hide example all" data-position="">
 				<td data="id"></td>
@@ -86,8 +85,8 @@
 	<script type="text/javascript" src="src/Persists/Client.js"></script>
 	<script type="text/javascript" src="src/Controllers/Client.js"></script>
 	<script type="text/javascript">
-	var controller = new ControllerClient();
-	controller.loadClients();
+		var controller = new ControllerClient();
+		controller.loadClients();
 	</script>
 	<script type="text/javascript" src="assets/js/navigator.js"></script>
 	<script type="text/javascript" src="assets/js/triggers.js"></script>

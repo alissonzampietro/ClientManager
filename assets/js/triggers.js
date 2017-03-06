@@ -2,7 +2,7 @@ var controller = new ControllerClient();
 
 $(".close").click(function() {
   $(".modal").fadeToggle("hide");
-  location.reload();
+  controller.loadClients();
 });
 
 $(".adicionar").click(function() {
@@ -24,7 +24,14 @@ $("#atualizar").click(function() {
   controller.updateClients();
 });
 
-$(".editar").click(function() {
+$("td.excluir").click(function() {
+  var pai = $(this).parent();
+  var id = pai.children(":first").html();
+  controller.deleteClient(id);
+  controller.loadClients();
+})
+
+$("td.editar").click(function() {
   var pai = $(this).parent();
   var id = pai.children(":first").html();
   $(".content-modal h2").text("Edição de Clientes");

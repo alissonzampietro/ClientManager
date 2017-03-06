@@ -1,5 +1,5 @@
-var position = 0;
-var lengthTr = $("tbody tr").length / 2;
+var position = -1;
+var lengthTr = window.QUANTIDADE_CLIENTES;
 
 function move(position) {
     $('tr').removeClass('hover');
@@ -13,7 +13,7 @@ $(document).keydown(function(e){
             $(".hover > .editar").trigger("click");
           }
       case 27:
-          position = 0;
+          position = -1;
           $('tr').removeClass('hover');
         break;
       case 38:
@@ -23,7 +23,9 @@ $(document).keydown(function(e){
           }
         break;
       case 40:
-          if(position < lengthTr) {
+          console.log(position);
+          console.log(lengthTr);
+          if((position+1) < lengthTr) {
             position++;
             move(position);
           }
