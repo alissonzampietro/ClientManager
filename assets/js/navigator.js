@@ -1,5 +1,4 @@
 var position = -1;
-var lengthTr = window.QUANTIDADE_CLIENTES;
 
 function move(position) {
     $('tr').removeClass('hover');
@@ -7,6 +6,7 @@ function move(position) {
 }
 
 $(document).keydown(function(e){
+    var lengthTr = $(".all").length;
     switch(e.keyCode){
       case 13:
           if($(".hover").length == 1){
@@ -23,8 +23,6 @@ $(document).keydown(function(e){
           }
         break;
       case 40:
-          console.log(position);
-          console.log(lengthTr);
           if((position+1) < lengthTr) {
             position++;
             move(position);

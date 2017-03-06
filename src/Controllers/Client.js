@@ -61,6 +61,7 @@ ControllerClient.prototype.screenEdit = (id) => {
 
 ControllerClient.prototype.loadClients = (name = null) => {
   var lengthClients;
+  var cont = 1;
   $("#data>tr").remove();
   if(name == null) {
     var clientes = persistence.get();
@@ -77,7 +78,7 @@ ControllerClient.prototype.loadClients = (name = null) => {
     if(clientes[cliente] !== undefined) {
       var atualizadoEm = "";
       var element = $( ".example" ).clone(true, true).appendTo( "#data" );
-      element.attr("data-position",cliente);
+      element.attr("data-position",cont);
       element.removeClass('hide example');
       $("td[data='id']",element).html(clientes[cliente].id);
       $("td[data='nome']",element).html(clientes[cliente].nome);
@@ -92,6 +93,7 @@ ControllerClient.prototype.loadClients = (name = null) => {
         atualizadoEm = ("0" + atualizadoEm.getDate()).slice(-2) + "/" + ("0" + (atualizadoEm.getMonth()+1)).slice(-2) + "/" + atualizadoEm.getFullYear() + " " + ("0" + atualizadoEm.getHours()).slice(-2) + ":" + ("0" + atualizadoEm.getMinutes()).slice(-2);
       }
       $("td[data='editado']",element).html(atualizadoEm);
+      cont++;
     }
   }
 
