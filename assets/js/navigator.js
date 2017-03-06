@@ -32,6 +32,6 @@ $(document).keydown(function(e){
 });
 
 $('tr').hover(function() {
-    position = 0;
+    position = -1;
     $('tr').removeClass('hover');
 });
