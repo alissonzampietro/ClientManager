@@ -15,6 +15,26 @@ PersistClient.prototype.save = function (obj) {
   localStorage.setItem('clients', clientes);
 };
 
+PersistClient.prototype.update = function (obj) {
+  var clients = this.get();
+  for(client in clients) {
+    if(clients[client].id == obj.id) {
+      clients[client].id = obj.id;
+      clients[client].nome = obj.nome;
+      clients[client].email = obj.email;
+      clients[client].cpf = obj.cpf;
+      clients[client].telefone = obj.telefone;
+      clients[client].nascimento = obj.nascimento;
+      clients[client].criadoEm = obj.criadoEm;
+      clients[client].atualizadoEm = obj.atualizadoEm;
+      break;
+    }
+  }
+  var clientes = JSON.stringify(clients);
+  localStorage.removeItem('clients');
+  localStorage.setItem('clients', clientes);
+};
+
 PersistClient.prototype.get = function () {
   return JSON.parse(localStorage.getItem('clients'));
 };

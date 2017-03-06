@@ -25,6 +25,10 @@ window.MESSAGE = function(chave) {
     "cadastrado": {
       msg: "Cliente inserido com sucesso.",
       classe: "acerto"
+    },
+    "editado": {
+      msg: "Cliente editado com sucesso.",
+      classe: "acerto"
     }
   }
   $(".log-message").text(mensagens[chave].msg);

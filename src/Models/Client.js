@@ -9,13 +9,19 @@ var Client = function(){
   this.atualizadoEm;
 }
 
-Client.prototype.setClient = (nome, email, cpf, nascimento, telefone) => {
+Client.prototype.setClient = (nome, email, cpf, nascimento, telefone, id = null) => {
   if(nome != "" && nome != undefined && nome != null
      && telefone != "" && telefone != undefined && telefone != null
      && email != "" && email != undefined && email != null
      && cpf != "" && cpf != undefined && cpf != null
      && nascimento != "" && nascimento != undefined && nascimento != null) {
-    this.id = parseInt(Client.prototype.defineId());
+       if(id !== null) {
+         this.id = id;
+         this.atualizadoEm = new Date();
+       }else{
+         this.id = parseInt(Client.prototype.defineId());
+         this.atualizadoEm = null;
+       }
     this.nome = nome;
     this.email = email;
     this.cpf = cpf;
@@ -25,7 +31,6 @@ Client.prototype.setClient = (nome, email, cpf, nascimento, telefone) => {
     this.nascimento.mes = data[1];
     this.nascimento.ano = data[0];
     this.criadoEm = new Date();
-    this.atualizadoEm = null;
     return Client.prototype.getData();
   }else{
     return false;

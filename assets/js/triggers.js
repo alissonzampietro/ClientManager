@@ -20,6 +20,10 @@ $("#inserir").click(function() {
   controller.insertClients();
 });
 
+$("#atualizar").click(function() {
+  controller.updateClients();
+});
+
 $(".editar").click(function() {
   var pai = $(this).parent();
   var id = pai.children(":first").html();

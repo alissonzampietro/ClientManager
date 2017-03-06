@@ -21,6 +21,24 @@ ControllerClient.prototype.insertClients = () => {
   }
 };
 
+ControllerClient.prototype.updateClients = () => {
+  var id = $("#id").val();
+  var nome = $("#atualiza-nome").val();
+  var email = $("#atualiza-email").val();
+  var cpf = $("#atualiza-cpf").val();
+  var nascimento = $("#atualiza-nascimento").val();
+  var telefone = $("#atualiza-telefone").val();
+
+  var modelClient = new Client();
+  var objClient = modelClient.setClient(nome, email, cpf, nascimento, telefone, id);
+  if(objClient != false) {
+    window.MESSAGE("editado");
+    persistence.update(objClient);
+  }else{
+    window.MESSAGE("erro-cadastro");
+  }
+};
+
 ControllerClient.prototype.screenEdit = (id) => {
     var client = persistence.getByID(id);
      $("#id").val(client.id);
