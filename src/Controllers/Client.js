@@ -61,7 +61,7 @@ ControllerClient.prototype.screenEdit = (id) => {
 
 ControllerClient.prototype.loadClients = (name = null) => {
   var lengthClients;
-  var cont = 1;
+  var cont = 0;
   $("#data>tr").remove();
   if(name == null) {
     var clientes = persistence.get();
